@@ -186,8 +186,16 @@ return lowerCaseArray
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
+function isItAnApple(strings) {
   /* code here */
+  let trueFalseArray = strings.map(function(string) {
+    if (string === 'apple'){
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return trueFalseArray;
 }
 
 /**
@@ -206,8 +214,13 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
+function removeApple(strings) {
   /* code here */
+let arrayMinusApple = strings.filter(function(fruit){
+  return (fruit !== 'apple')
+})
+
+  return arrayMinusApple
 }
 
 /**
