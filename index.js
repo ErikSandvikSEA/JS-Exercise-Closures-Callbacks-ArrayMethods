@@ -136,8 +136,13 @@ function processProduct(num1, num2, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  let deDoubledArray = list.filter(function(item, index){
+    return list.indexOf(item) === index
+  })
+
+  return callback(deDoubledArray)
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -305,8 +310,12 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
+  let runnersAtSize = runners.filter(function(runner){
+    return runner.shirt_size === tShirtSize
+  })
+  return runnersAtSize
 }
 
 /**
