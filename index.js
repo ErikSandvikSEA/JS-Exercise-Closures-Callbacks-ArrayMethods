@@ -238,8 +238,12 @@ let arrayMinusApple = strings.filter(function(fruit){
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
+function stringSmash(strings) {
   /* code here */
+  let comboString = strings.reduce(function(combo, string){
+    return combo += string
+  })
+  return comboString
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
