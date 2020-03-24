@@ -335,9 +335,16 @@ function tallyUpDonations(/* CODE HERE */) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ *    counter1 uses a callback function, counter2 just acts on the variable that is given as the argument.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ *    counter1 uses a closure. You can tell because it has a function within a function. Meaning the code inside the counter() function can only be accessed by returning it back to the main counterMaker() funciton.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ *  counter1 is more useful in cases where we have to use the counterMaker function over and over again with different data to pass into it.
+ *  counter2 may be more useful if only used once or twice as it deals with less abstraction and could be a bit simpler to read.
  *
 */
 
