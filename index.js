@@ -47,7 +47,7 @@ function processFirstItem(stringList, callback) {
  * 
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
-*/ 
+*/
 function processLength(list, callback) {
   /* CODE HERE */
   return callback(list.length)
@@ -138,7 +138,7 @@ function processProduct(num1, num2, callback) {
 */
 function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-  let deDoubledArray = list.filter(function(item, index){
+  let deDoubledArray = list.filter(function (item, index) {
     return list.indexOf(item) === index
   })
 
@@ -164,14 +164,14 @@ function processDuplicateFree(list, callback) {
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(strings){
+function lowerCaseStrings(strings) {
   /* code here */
-let lowerCaseArray  = [];
-strings.forEach((string) => {
- lowerCaseArray.push(string.toLowerCase());
-})
+  let lowerCaseArray = [];
+  strings.forEach((string) => {
+    lowerCaseArray.push(string.toLowerCase());
+  })
 
-return lowerCaseArray
+  return lowerCaseArray
 }
 
 
@@ -193,8 +193,8 @@ return lowerCaseArray
 */
 function isItAnApple(strings) {
   /* code here */
-  let trueFalseArray = strings.map(function(string) {
-    if (string === 'apple'){
+  let trueFalseArray = strings.map(function (string) {
+    if (string === 'apple') {
       return true;
     } else {
       return false;
@@ -221,9 +221,9 @@ function isItAnApple(strings) {
 */
 function removeApple(strings) {
   /* code here */
-let arrayMinusApple = strings.filter(function(fruit){
-  return (fruit !== 'apple')
-})
+  let arrayMinusApple = strings.filter(function (fruit) {
+    return (fruit !== 'apple')
+  })
 
   return arrayMinusApple
 }
@@ -245,7 +245,7 @@ let arrayMinusApple = strings.filter(function(fruit){
 */
 function stringSmash(strings) {
   /* code here */
-  let comboString = strings.reduce(function(combo, string){
+  let comboString = strings.reduce(function (combo, string) {
     return combo += string
   })
   return comboString
@@ -268,12 +268,12 @@ function stringSmash(strings) {
 */
 function getFullNames(runners) {
   /* CODE HERE */
-let fullNamesArray = [];
- runners.forEach(function(runner){
-fullNamesArray.push(`${runner.last_name}, ${runner.first_name}`)
-})
+  let fullNamesArray = [];
+  runners.forEach(function (runner) {
+    fullNamesArray.push(`${runner.last_name}, ${runner.first_name}`)
+  })
 
-return fullNamesArray
+  return fullNamesArray
 }
 
 /**
@@ -290,7 +290,7 @@ return fullNamesArray
 */
 function firstNamesAllCaps(runners) {
   /* CODE HERE */
-  let allCapsArray = runners.map(function(runner){
+  let allCapsArray = runners.map(function (runner) {
     return runner.first_name.toUpperCase()
   })
   return allCapsArray
@@ -312,7 +312,7 @@ function firstNamesAllCaps(runners) {
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
-  let runnersAtSize = runners.filter(function(runner){
+  let runnersAtSize = runners.filter(function (runner) {
     return runner.shirt_size === tShirtSize
   })
   return runnersAtSize
@@ -331,7 +331,7 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
 */
 function tallyUpDonations(runners) {
   /* CODE HERE */
-  let donationTotal = runners.reduce(function(totalAccumulator, runner){
+  let donationTotal = runners.reduce(function (totalAccumulator, runner) {
     return totalAccumulator += runner.donation
   }, 0)
   return donationTotal
@@ -399,9 +399,22 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(maxValue) {
   /* CODE HERE */
+  let count = 0;
+  return function counter() {
+  if (count <= maxValue) {
+      return count++
+    } else if (count > maxValue) {
+      count = 0
+      return count++
+    } 
+  } 
 }
+
+
+
+
 
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
@@ -417,7 +430,7 @@ if (typeof exports !== 'undefined') {
   if (processSum) { module.exports.processSum = processSum }
   if (processProduct) { module.exports.processProduct = processProduct }
   if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
-  if (lowerCaseStrings ) { module.exports.lowerCaseStrings = lowerCaseStrings}
+  if (lowerCaseStrings) { module.exports.lowerCaseStrings = lowerCaseStrings }
   if (isItAnApple) { module.exports.isItAnApple = isItAnApple }
   if (removeApple) { module.exports.removeApple = removeApple }
   if (stringSmash) { module.exports.stringSmash = stringSmash }
